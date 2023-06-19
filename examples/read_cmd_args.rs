@@ -4,6 +4,12 @@
 use std::env;
 
 fn main() {
+    
+    read_args();
+    
+}
+
+fn read_args() {
     let args: Vec<String> = env::args().collect();
     
     let query: &String ;
@@ -13,8 +19,6 @@ fn main() {
     query = &args[1];
     
 
-    println!("First argument =>  {}", query);
-    
+    println!("First argument (fn) =>  {}", query);
     }
 }
-
