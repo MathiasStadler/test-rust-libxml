@@ -2,15 +2,17 @@
 //from here
 //https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html
 use std::env;
+use std::num::ParseIntError;
 
-fn main() {
+fn main() -> Result<(), ParseIntError> {
     
     read_args();
-    
+
+ Ok(())   
 }
 
-fn read_args() {
-    let args: Vec<String> = env::args().collect();
+fn read_args() -> String {
+    let args: Vec<String> = env::args().collect() ;
     
     let query: &String ;
     
@@ -21,4 +23,7 @@ fn read_args() {
 
     println!("First argument (fn) =>  {}", query);
     }
+
+    return query;
+    
 }
